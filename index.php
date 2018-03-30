@@ -10,14 +10,16 @@ use BlogEcrivain\View\View;
 Autoloader::register();
 
 
+
+
 // voir les articles
 $real= new CommentManager();
-
 $vue =$real->readAll();
 
 
 
+
 $voir= new View();
-$voir->essayons("article");
+$voir->essayons("article",$vue);
 
 ?>

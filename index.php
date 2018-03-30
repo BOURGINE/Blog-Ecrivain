@@ -1,3 +1,14 @@
+<?php
+
+require"Autoload/Autoloader.php";
+
+use Autoload\Autoloader;
+use BlogEcrivain\Model\Manager\CommentManager;
+
+Autoloader::register();
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -25,8 +36,25 @@
 </head>
 
 <body>
-<h1>
-    hello world!
-</h1>
+    <h1>
+        hello world!
+    </h1>
+
+<?php
+
+    include ("View/accueil.php");
+    include ("View/article.php");
+?>
+
+<?php
+
+$real= new CommentManager();
+
+$vue =$real->readAll();
+
+var_dump($vue);
+
+?>
+
 </body>
 </html>

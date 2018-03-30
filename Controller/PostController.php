@@ -123,6 +123,8 @@ class PostController
         // Je pouvais faite des traitements conditionnels ici mais je l'ai fait dans la vue
 
 
+
+
         // On affiche ensuite le résultat en HTML en appellant ma vue depuis mon controlleur-ci.
         include(__DIR__ . "/../View/Frontend/readAllPosts.php");
     }

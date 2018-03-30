@@ -25,6 +25,9 @@ class View
             include "View/$page.php";
 $content=ob_get_clean();
 
+
+   //     var_dump($data);
+
         //3- Appelle template
         include ("View/template.php");
     }

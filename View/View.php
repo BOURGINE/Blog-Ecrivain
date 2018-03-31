@@ -10,7 +10,7 @@ namespace BlogEcrivain\View;
 class View
 {
 
-    function essayons($page, $data)
+    function ShowFrontPage($page, $data)
     {
      // EN RESUME: Ce que je fais c'est apeller une page avec des données;
 
@@ -19,7 +19,7 @@ class View
         //1- Insertion des données dans ob_start
         ob_start();
             extract($data);
-            include "View/$page.php";
+            include "View/Frontend/$page.php";
 
         $content=ob_get_clean();
 
@@ -29,4 +29,23 @@ class View
         include ("View/template.php");
     }
 
+
+    function ShowBackPage($page, $data)
+    {
+        // EN RESUME: Ce que je fais c'est apeller une page avec des données;
+
+        // retrourner ce couple au template
+
+        //1- Insertion des données dans ob_start
+        ob_start();
+        extract($data);
+        include "View/Backend/$page.php";
+
+        $content=ob_get_clean();
+
+        //     var_dump($data);
+
+        //3- Appelle template
+        include ("View/template.php");
+    }
 }

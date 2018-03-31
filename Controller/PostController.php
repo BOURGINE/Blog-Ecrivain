@@ -1,6 +1,6 @@
 <?php
 
-namespace BlogEcrian\Controller;
+namespace BlogEcrivain\Controller;
 
 // On indique les espace de nom des classes utilisées.
 
@@ -8,6 +8,8 @@ use BlogEcrivain\Model\Entity\Post;
 use BlogEcrivain\Model\Manager\CommentManager;
 use BlogEcrivain\Model\Manager\PostManager;
 use BlogEcrivain\Model\Manager\UserManager;
+
+use BlogEcrivain\View\View;
 
 class PostController
 {
@@ -35,8 +37,10 @@ class PostController
 
     public function formConnexion()
     {
-        $message="affiché";
-        include(__DIR__ . "/../View/Frontend/form_connexion.php");
+        $view= new View();
+
+        $view->showFrontPage("form_connexion");
+       // include(__DIR__ . "/../View/Frontend/form_connexion.php");
     }
 
                     /**
@@ -92,9 +96,11 @@ class PostController
 
         // Je pouvais faite des traitements conditionnels ici mais je l'ai fait dans la vue
 
+        $view= new View();
+        $view->showFrontPage("readLastPosts", $posts);
 
         // On affiche ensuite le résultat en HTML en appellant ma vue depuis mon controlleur-ci.
-        include(__DIR__ . "/../View/Frontend/readLastPosts.php");
+        //include(__DIR__ . "/../View/Frontend/readLastPosts.php");
     }
 
     public function readAllPosts()

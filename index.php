@@ -16,7 +16,7 @@ use BlogEcrivain\Model\Manager\UserManager;
 
 use BlogEcrivain\Controller\CommentController;
 use BlogEcrivain\Controller\UserController;
-//use BlogEcrivain\Controller\PostController;
+use BlogEcrivain\Controller\PostController;
 
 
 // Ici c'est la déclaration de Class. C'est ce que je dois gérer avec un autloader
@@ -250,17 +250,10 @@ catch
 
 
 
-
-
-
-
-
-
-
 /**
 // voir les articles
 $real= new CommentManager();
-$data =$real->readAll();
+$vue =$real->readAll();
 
 // ces deux lignes appellent la vue - A partir de chaque controller
 $view= new View();

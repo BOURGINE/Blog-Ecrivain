@@ -16,16 +16,15 @@ class View
 
         // retrourner ce couple au template
 
-        //1- Insertion des données dans ob_start
+        //1- Insertion des données dans ob_start pour retourner au la page
         ob_start();
+
             extract($data);
             include "View/Frontend/$page.php";
 
         $content=ob_get_clean();
 
-   //     var_dump($data);
-
-        //3- Appelle template
+        //3- Appelle template. je retrourne tous ça au template
         include ("View/template.php");
     }
 

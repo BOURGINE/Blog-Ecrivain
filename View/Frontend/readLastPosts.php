@@ -1,8 +1,6 @@
 
 <?php $title = 'read last posts'; ?>
 
-<?php ob_start(); ?>
-
 <!--**********************************************
                     LOGO & Titre du livre
 **************************************************-->
@@ -102,8 +100,3 @@ include("slides.php");
     </div> <!-- Fin Station -->
 
 </section> <!--FIn application-->
-
-
-<?php $content = ob_get_clean(); ?>
-
-<?php require('template.php'); ?>

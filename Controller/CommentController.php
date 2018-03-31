@@ -8,7 +8,7 @@
 
 namespace BlogEcrivain\Controller;
 
-use BlogEcrian\Controller\PostController;
+use BlogEcrivain\Controller\PostController;
 use BlogEcrivain\Model\Entity\Comment;
 use BlogEcrivain\Model\Manager\CommentManager;
 

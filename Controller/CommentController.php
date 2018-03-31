@@ -6,7 +6,14 @@
  * Time: 10:17
  */
 
-namespace Projet4\Controller;
+namespace BlogEcrivain\Controller;
+
+use BlogEcrian\Controller\PostController;
+use BlogEcrivain\Model\Entity\Comment;
+use BlogEcrivain\Model\Manager\CommentManager;
+
+
+/**
 
 require_once '../Projet4/Entity/Post.php';
 require_once '../Projet4/Manager/PostManager.php';
@@ -16,11 +23,10 @@ require_once '../Projet4/Manager/CommentManager.php';
 
 require_once '../Projet4/Entity/User.php';
 require_once '../Projet4/Manager/UserManager.php';
+**/
 
 // On indique les espace de nom des classes utilisées.
 
-use Projet4\Entity\Comment;
-use Projet4\Manager\CommentManager;
 
 class CommentController extends PostController
 {

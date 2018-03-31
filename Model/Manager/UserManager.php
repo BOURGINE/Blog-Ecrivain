@@ -8,8 +8,7 @@
 
 namespace BlogEcrivain\Model\Manager;
 
-// Je definis l'emplacement des classe je vais utiliser
-
+// Je definis l'emplacement des class je vais utiliser
 use BlogEcrivain\Model\Entity\User;
 
 class UserManager extends Connex_Db

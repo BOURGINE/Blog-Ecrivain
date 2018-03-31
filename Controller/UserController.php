@@ -6,14 +6,16 @@
  * Time: 10:17
  */
 
-namespace Projet4\Controller;
+namespace BlogEcrivain\Controller;
 
+use BlogEcrian\Controller\PostController;
+use BlogEcrivain\Model\Entity\User;
+use BlogEcrivain\Model\Manager\UserManager;
 
+/**
 require_once '../Projet4/Entity/User.php';
 require_once '../Projet4/Manager/UserManager.php';
-
-use Projet4\Entity\User;
-use Projet4\Manager\UserManager;
+**/
 
 class UserController extends PostController
 {

@@ -1,8 +1,8 @@
 <?php
 
+namespace BlogEcrian\Controller;
 
-namespace Projet4\Controller;
-
+/**
 require_once '../Projet4/Entity/Post.php';
 require_once '../Projet4/Manager/PostManager.php';
 
@@ -11,17 +11,8 @@ require_once '../Projet4/Manager/CommentManager.php';
 
 require_once '../Projet4/Entity/User.php';
 require_once '../Projet4/Manager/UserManager.php';
-
+**/
 // On indique les espace de nom des classes utilisées.
-
-use Projet4\Entity\Post;
-use Projet4\Manager\PostManager;
-
-//use Projet4\Entity\Comment;
-use Projet4\Manager\CommentManager;
-
-//use Projet4\Entity\User;
-use Projet4\Manager\UserManager;
 
 
 class PostController

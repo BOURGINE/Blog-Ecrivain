@@ -14,7 +14,6 @@ use BlogEcrivain\Model\Entity\Post;
 
 class PostManager extends Connex_Db
 {
-
     private $pdoStatement;
 
     /**

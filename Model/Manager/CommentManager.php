@@ -14,9 +14,7 @@ use BlogEcrivain\Model\Entity\Comment;
 
 class CommentManager extends Connex_Db
 {
-
     private $pdoStatement;
-
 
     /**
      * Création des commentaires

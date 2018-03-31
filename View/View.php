@@ -12,19 +12,16 @@ class View
 
     function essayons($page, $data)
     {
+     // EN RESUME: Ce que je fais c'est apeller une page avec des données;
 
-     // EN RESUMER: Ce que je fais c'est apeller une page avec des données;
-        //d'insérer les données dans cette page
         // retrourner ce couple au template
 
         //1- Insertion des données dans ob_start
         ob_start();
-
             extract($data);
-
             include "View/$page.php";
-$content=ob_get_clean();
 
+        $content=ob_get_clean();
 
    //     var_dump($data);
 

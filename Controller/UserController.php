@@ -66,6 +66,7 @@ class UserController extends PostController
             $this->readAllAdmin();
         }else {
             $this->formConnexion();
+            echo "<script>alert(\"Identifiant ou Mot de passe incorrect\")</script>";
         }
     }
 

@@ -212,19 +212,19 @@ class UserManager extends Connex_Db
         *
         * */
 
-        if ($resultat && $isPasswordCorrect){
-            //session_destroy();
+        if ($resultat && $isPasswordCorrect)
+        {
             session_start();
             $_SESSION['id'] = $resultat['id'];
             $_SESSION['pseudo'] = $resultat['pseudo'];
             $_SESSION['role'] = $resultat['role'];
         }
-        else{
+        else
+        {
             $message='identifiant mot de passe incorrect';
 
         }
 
-
-        }
+     }
 
 }

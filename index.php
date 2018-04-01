@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require"Autoload/Autoloader.php";
 use Autoload\Autoloader;

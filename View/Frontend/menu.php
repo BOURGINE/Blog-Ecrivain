@@ -16,9 +16,9 @@ if(isset($_SESSION['role']) && $_SESSION['role']=='1')
 
 <nav id="menu">
         <ul>
-            <li><a href="../BlogEcrivain/index.php">Accueil</a></li>
-            <li><a href="../BlogEcrivain/index.php?action=biblio">Biographie</a></li>
-            <li><a href="../BlogEcrivain/index.php?action=chapitres">Chapitres</a></li>
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="index.php?action=biblio">Biographie</a></li>
+            <li><a href="index.php?action=chapitres">Chapitres</a></li>
             <li>  <?= $info3 ?> </li>
         </ul>
     </nav>

@@ -12,4 +12,4 @@
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('../Projet4/View/Frontend/template.php'); ?>
+<?php require('../BlogEcrivain/View/template.php'); ?>

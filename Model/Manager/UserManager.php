@@ -67,7 +67,7 @@ class UserManager extends Connex_Db
 
             // récupération du réslutat. Ici, j'utiliserai fetchObject car je n'affiche qu'une seul ligne da db
 
-            $user= $this->pdoStatement->fetchObject('Projet4\Entity\User');
+            $user= $this->pdoStatement->fetchObject('BlogEcrivain\Model\Entity\User');
 
             if($user === false)
             {
@@ -95,7 +95,7 @@ class UserManager extends Connex_Db
         //1- initialisation du tableau vide
         $users=[];
         // 2-On ajoute au table chaque ligne.
-        while($user=$this->pdoStatement->fetchObject('Projet4\Entity\User'))
+        while($user=$this->pdoStatement->fetchObject('BlogEcrivain\Model\Entity\User'))
         {
             $users[]=$user;
         }

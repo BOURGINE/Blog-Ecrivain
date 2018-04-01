@@ -6,7 +6,7 @@
             Slideshow, slider et bouttons-fleches
 **************************************************-->
 <?php
-include('../Projet4/View/Frontend/logo.php');
+include('../BlogEcrivain/View/Frontend/logo.php');
 ?>
 
 <div>
@@ -39,5 +39,5 @@ include('../Projet4/View/Frontend/logo.php');
 </div>
 <?php $content = ob_get_clean(); ?>
 
-<?php require('../Projet4/View/Frontend/template.php'); ?>
+<?php require('../BlogEcrivain/View/template.php'); ?>
 

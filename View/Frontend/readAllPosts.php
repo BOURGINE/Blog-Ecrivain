@@ -2,8 +2,6 @@
 
 $title = 'read All posts'; ?>
 
-<?php ob_start(); ?>
-
 <!--**********************************************
                     LOGO & Titre du livre
 **************************************************-->
@@ -75,8 +73,3 @@ include("menu.php");
     </div> <!-- Fin Station -->
 
 </section> <!--FIn application-->
-
-
-<?php $content = ob_get_clean(); ?>
-
-<?php require('template.php'); ?>

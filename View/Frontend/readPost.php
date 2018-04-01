@@ -1,7 +1,5 @@
 <?php $title = 'Articles'; ?>
 
-<?php ob_start(); ?>
-
     <!--**********************************************
                         LOGO & Titre du livre
     **************************************************-->
@@ -116,7 +114,3 @@ include("menu.php");
         </div>
 
     </div>
-
-<?php $content = ob_get_clean(); ?>
-
-<?php require('template.php'); ?>

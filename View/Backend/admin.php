@@ -1,7 +1,5 @@
 <?php $title = 'Administration'; ?>
 
-<?php ob_start(); ?>
-
     <!--**********************************************
                         LOGO & Titre du livre
     **************************************************-->
@@ -147,10 +145,4 @@ include("../BlogEcrivain/View/Frontend/Menu.php");
         <h4> <a href="index.php?action=form_createUserAdmin" style="color: darkred"> Créer un nouveau Compte </a></h4>
     </div>
 
-
 </div>
-
-
-<?php $content = ob_get_clean(); ?>
-
-<?php require('../BlogEcrivain/View/Frontend/template.php'); ?>

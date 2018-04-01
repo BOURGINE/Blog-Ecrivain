@@ -68,7 +68,7 @@ class PostManager extends Connex_Db
 
             // récupération du réslutat. Ici, j'utiliserai fetchObject car je n'affiche qu'une seul ligne da db
 
-            $post= $this->pdoStatement->fetchObject('Projet4\Entity\Post');
+            $post= $this->pdoStatement->fetchObject('BlogEcrivain\Model\Entity\Post');
 
             if($post === false)
             {
@@ -99,7 +99,7 @@ class PostManager extends Connex_Db
         $posts=[];
 
         // 2-On ajoute au table chaque ligne.
-        while($post=$this->pdoStatement->fetchObject('Projet4\Entity\Post'))
+        while($post=$this->pdoStatement->fetchObject('BlogEcrivain\Model\Entity\Post'))
         {
             $posts[]=$post;
         }
@@ -126,7 +126,7 @@ class PostManager extends Connex_Db
         $posts=[];
 
         // 2-On ajoute au table chaque ligne.
-        while($post=$this->pdoStatement->fetchObject('Projet4\Entity\Post'))
+        while($post=$this->pdoStatement->fetchObject('BlogEcrivain\Model\Entity\Post'))
         {
             $posts[]=$post;
         }

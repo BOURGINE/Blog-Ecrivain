@@ -5,7 +5,7 @@
                         MENU
     **************************************************-->
 <?php
-include("../Projet4/View/Frontend/Menu.php");
+include("../BlogEcrivain/View/Frontend/Menu.php");
 ?>
 
     <!--**********************************************
@@ -35,4 +35,4 @@ include("../Projet4/View/Frontend/Menu.php");
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('../Projet4/View/Frontend/template.php'); ?>
+<?php require('../BlogEcrivain/View/template.php'); ?>

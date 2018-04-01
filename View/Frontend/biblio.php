@@ -19,11 +19,7 @@ include("menu.php");
     <!-- ****************************************
                 BIBLIO et DERNIERS CHAPITRES
     ******************************************-->
-
-
-
-
-        <!--Présentation de l'auteur-->
+     <!--Présentation de l'auteur-->
         <div id="station_lecture">
 
             <div class="titre1">
@@ -47,4 +43,4 @@ include("menu.php");
 
 <?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+<?php require('../BlogEcrivain/View/template.php'); ?>

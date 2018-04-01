@@ -66,7 +66,7 @@ class CommentManager extends Connex_Db
 
             // récupération du réslutat. Ici, j'utiliserai fetchObject car je n'affiche qu'une seul ligne da db
 
-            $post= $this->pdoStatement->fetchObject('Projet4\Entity\Post');
+            $post= $this->pdoStatement->fetchObject('BlogEcrivain\Model\Entity\Post');
 
             if($post === false)
             {
@@ -100,7 +100,7 @@ class CommentManager extends Connex_Db
 
             // récupération du réslutat. Ici, j'utiliserai fetchObject car je n'affiche qu'une seul ligne da db
 
-            $comment= $this->pdoStatement->fetchObject('Projet4\Entity\Comment');
+            $comment= $this->pdoStatement->fetchObject('BlogEcrivain\Model\Entity\Comment');
 
             if($comment === false)
             {
@@ -137,7 +137,7 @@ class CommentManager extends Connex_Db
             $comments=[];
 
             // 2-On ajoute au table chaque ligne.
-            while($comment=$this->pdoStatement->fetchObject('Projet4\Entity\Comment'))
+            while($comment=$this->pdoStatement->fetchObject('BlogEcrivain\Model\Entity\Comment'))
             {
                 $comments[]=$comment;
             }
@@ -163,7 +163,7 @@ class CommentManager extends Connex_Db
         $comments=[];
 
         // 2-On ajoute au table chaque ligne.
-        while($comment=$this->pdoStatement->fetchObject('Projet4\Entity\Comment'))
+        while($comment=$this->pdoStatement->fetchObject('BlogEcrivain\Model\Entity\Comment'))
         {
             $comments[]=$comment;
         }

@@ -8,11 +8,15 @@
 <?php
 include('../BlogEcrivain/View/Frontend/logo.php');
 ?>
+<!--**********************************************
+                    MENU
+**************************************************-->
+<?php
+include("../BlogEcrivain/View/Frontend/menu.php");
+?>
 
 <div>
     <h1> Ajouter un article</h1>
-
-    <p> <a href="index.php?action=accesAdmin"> RETOUR à ADMINISTRATION </a></p>
 
     <form  action="index.php?action=createPost" method="POST" id="form_CreatePost" enctype="multipart/form-data">
 

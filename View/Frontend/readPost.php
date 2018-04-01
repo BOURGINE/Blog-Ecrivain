@@ -81,7 +81,7 @@ include("menu.php");
 
                 <?php if(isset($_SESSION['pseudo'])):?>
 
-                <h2>Auteur: <?=$_SESSION['pseudo'] ?></h2>
+                <h2 style="color: white">Auteur: <?=$_SESSION['pseudo'] ?></h2>
                 <input type="hidden" name="author" id="pseudo" value="<?=$_SESSION['pseudo'] ?>"/>
 
                 <?php else:?>

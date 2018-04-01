@@ -196,7 +196,7 @@ class UserManager extends Connex_Db
             {
                 if($isPasswordCorrect)
                 {
-                    session_destroy();
+
                     session_start();
                     $_SESSION['id'] = $resultat['id'];
                     $_SESSION['pseudo'] = $resultat['pseudo'];
@@ -214,6 +214,7 @@ class UserManager extends Connex_Db
 
         if ($resultat && $isPasswordCorrect)
         {
+            session_destroy();
             session_start();
             $_SESSION['id'] = $resultat['id'];
             $_SESSION['pseudo'] = $resultat['pseudo'];

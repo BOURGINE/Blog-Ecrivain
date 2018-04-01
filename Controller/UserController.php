@@ -11,10 +11,6 @@ namespace BlogEcrivain\Controller;
 use BlogEcrivain\Model\Entity\User;
 use BlogEcrivain\Model\Manager\UserManager;
 
-/**
-require_once '../Projet4/Entity/User.php';
-require_once '../Projet4/Manager/UserManager.php';
-**/
 
 class UserController extends PostController
 {

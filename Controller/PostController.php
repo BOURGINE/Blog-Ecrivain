@@ -37,10 +37,7 @@ class PostController
 
     public function formConnexion()
     {
-        $view= new View();
-
-        $view->showFrontPage("form_connexion");
-       // include(__DIR__ . "/../View/Frontend/form_connexion.php");
+       include(__DIR__ . "/../View/Frontend/form_connexion.php");
     }
 
                     /**
@@ -259,6 +256,7 @@ class PostController
         // 3- Les utilisateurs
         $userManager = new UserManager();
         $users= $userManager->readAll();
+
 
         include(__DIR__ . "/../View/Backend/admin.php");
     }

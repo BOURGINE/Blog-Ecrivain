@@ -12,19 +12,6 @@ use BlogEcrivain\Controller\PostController;
 use BlogEcrivain\Model\Entity\Comment;
 use BlogEcrivain\Model\Manager\CommentManager;
 
-
-/**
-
-require_once '../Projet4/Entity/Post.php';
-require_once '../Projet4/Manager/PostManager.php';
-
-require_once '../Projet4/Entity/Comment.php';
-require_once '../Projet4/Manager/CommentManager.php';
-
-require_once '../Projet4/Entity/User.php';
-require_once '../Projet4/Manager/UserManager.php';
-**/
-
 // On indique les espace de nom des classes utilisées.
 
 

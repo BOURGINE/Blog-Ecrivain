@@ -233,8 +233,6 @@ try {
 
     }
 
-
-
     else {
         $controller->readLastPost();
     }

@@ -38,7 +38,7 @@ else
 
     <link rel="stylesheet" href="public/img/font-awesome/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="../Projet4/Public/style.css"/>
+    <link rel="stylesheet" href="../BlogEcrivain/Public/style.css"/>
 
     <title><?= $title ?></title>
 </head>

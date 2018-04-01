@@ -19,6 +19,7 @@ include("menu.php");
 **************************************************-->
 <?php
 include("slides.php");
+
 ?>
 <!-- ****************************************
             BIBLIO et DERNIERS CHAPITRES
@@ -61,16 +62,16 @@ include("slides.php");
 
         <!-- Billets -->
         <div id="section_billets">
-            <?php if(empty($posts)):?>
+            <?php if(empty($data)):?>
              <p> il n'y a aucun article </p>
 
             <?php else:?>
-                <?php if($posts === false):?>
+                <?php if($data === false):?>
                     <p> Une erreur vient de se produire</p>
 
                 <?php else:?>
 
-                    <?php foreach ($posts as $post):?>
+                    <?php foreach ($data as $post):?>
                         <div class="billets">
 
                             <figure class="imgBillets">

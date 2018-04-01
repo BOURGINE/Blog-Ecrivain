@@ -99,6 +99,7 @@ class PostController
         $view= new View();
         $view->showFrontPage("readLastPosts", $posts);
 
+
         // On affiche ensuite le résultat en HTML en appellant ma vue depuis mon controlleur-ci.
         //include(__DIR__ . "/../View/Frontend/readLastPosts.php");
     }

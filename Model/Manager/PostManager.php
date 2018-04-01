@@ -11,10 +11,12 @@ namespace BlogEcrivain\Model\Manager;
 // Je definis l'emplacement des classe je vais utiliser
 
 use BlogEcrivain\Model\Entity\Post;
+use PDO;
 
 class PostManager extends Connex_Db
 {
     private $pdoStatement;
+
 
     /**
      *

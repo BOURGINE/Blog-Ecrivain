@@ -55,8 +55,8 @@ try {
 
         elseif ($_GET['action'] == 'deconnexion')
         {
-            session_destroy();
             header('Location: index.php');
+            session_destroy();
         }
 
 
@@ -87,7 +87,6 @@ try {
          * ($userController)
          *
          **/
-
 
 
 

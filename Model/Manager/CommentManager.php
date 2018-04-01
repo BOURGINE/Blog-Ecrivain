@@ -11,6 +11,7 @@ namespace BlogEcrivain\Model\Manager;
 // Je definis l'emplacement des classe je vais utiliser
 
 use BlogEcrivain\Model\Entity\Comment;
+use PDO;
 
 class CommentManager extends Connex_Db
 {

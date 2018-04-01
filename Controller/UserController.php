@@ -44,7 +44,8 @@ class UserController extends PostController
         include(__DIR__ . "/../View/Backend/messageAdmin.php");
     }
 
-    public function formcreateUserAdmin(){
+    public function formcreateUserAdmin()
+    {
         include(__DIR__ . "/../View/Backend/form_createUserAdmin.php");
     }
 

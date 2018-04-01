@@ -110,29 +110,30 @@ class PostController
 
         // Je pouvais faite des traitements conditionnels ici mais je l'ai fait dans la vue
 
-
+        $view= new View();
+        $view->ShowFrontPage("ReadAllPosts", $posts);
 
 
         // On affiche ensuite le résultat en HTML en appellant ma vue depuis mon controlleur-ci.
-        include(__DIR__ . "/../View/Frontend/readAllPosts.php");
+       // include(__DIR__ . "/../View/Frontend/readAllPosts.php");
     }
 
     public function readPost($reception)
     {
         // 1- LES POST
         $postManager = new PostManager();
-        $post= $postManager->read($reception);
+        $post = $postManager->read($reception);
 
         // Je pouvais faite des traitements conditionnels ici mais je l'ai fait dans la vue
 
         //  2- LES COMMENTAIRES
         $commentManager = new CommentManager();
-
         $comments = $commentManager->readAllByID($reception);
 
-        // Je pouvais faite des traitements conditionnels ici mais je l'ai fait dans la vue
+        $view= new View();
+        $view->ShowFrontPage("readPost", [$post, $comments]);
 
-        include(__DIR__ . "/../View/Frontend/readPost.php");
+        //include(__DIR__ . "/../View/Frontend/readPost.php");
     }
 
     /**
@@ -149,7 +150,6 @@ class PostController
         $post = $postManager->read($_GET['id']);
 
         // IL doit aussi demandé le nouveau formulaire à la vue selon l'id
-
         include(__DIR__ . "/../View/Backend/form_UpdatePost.php");
     }
 
@@ -257,8 +257,10 @@ class PostController
         $userManager = new UserManager();
         $users= $userManager->readAll();
 
+        $view= new View();
+        $view->ShowBackPage("admin", [$posts, $comments, $users]); // ("readLastPosts", $posts);
 
-        include(__DIR__ . "/../View/Backend/admin.php");
+        //include(__DIR__ . "/../View/Backend/admin.php");
     }
 
 

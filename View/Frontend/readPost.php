@@ -12,42 +12,40 @@ include("logo.php");
 <?php
 include("menu.php");
 ?>
-    <!-- ****************************************
+<!-- ****************************************
                 BIBLIO et DERNIERS CHAPITRES
-    ******************************************-->
+******************************************-->
 
     <!--Derniers acticles-->
     <div id="station_lecture">
 
-    <!-- Titre -->
-     <div>
-        <div class="titre1">
-            <div class="titre2">
-                <h1> <?= $post->getTitle();?> - <?= $post->getDate();?>  </h1>
+        <!-- Titre -->
+         <div>
+            <div class="titre1">
+                <div class="titre2">
+                    <h1> <?= $data[0]->getTitle();?> - <?= $data[0]->getDate();?>  </h1>
+                </div>
             </div>
+
+            <figure class="imgBillets">
+                <img src="../BlogEcrivain/Public/imgUpload/<?= $data[0]->getImg();?>"/>
+            </figure>
+
+            <p> <?= $data[0]->getContent();?> </p>
         </div>
-
-        <figure class="imgBillets">
-            <img src="../Projet4/Public/imgUpload/<?= $post->getImg();?>"/>
-        </figure>
-
-        <p> <?= $post->getContent();?> </p>
-    </div>
-
-
 
     <!-- Ici, je dois afficher les commentaires liés à chaque billet -->
 
         <div>
-            <?php if(empty($comments)):?>
+            <?php if(empty($data[1])):?>
                 <p class="sectioncomment"> il n'y a aucun commentaire</p>
             <?php else:?>
 
-                <?php if($comments === false):?>
+                <?php if($data[1] === false):?>
                     <p> Une erreur vient de se produire</p>
                 <?php else:?>
 
-                    <?php foreach ($comments as $comment):?>
+                    <?php foreach ($data[1] as $comment):?>
                             <!-- Corps de chaque commentaire -->
                     <div class="sectioncomment">
 
@@ -72,23 +70,14 @@ include("menu.php");
             <?php endif;?>
         </div>
 
+        <!-- Ici, je dois afficher le formulaire de création de commentaire-->
 
-        <div>
-
-        <?php if(empty($message)):?>
-            <p> </p>
-        <?php else:?>
-            <p> <?= $message;?> </p>
-        <?php endif;?>
-        </div>
-
-
-        <div id="session_form_createComment">  <!-- Ici, je dois afficher le formulaire de création de commentaire-->
+        <div id="session_form_createComment">
 
             <form  action="index.php?action=createComment" method="POST" id="form_createComment"  >
                 <h2> Ajouter un commentaire</h2>
 
-                <input type="hidden" name="id_post" value="<?=$post->getId()?>"/>
+                <input type="hidden" name="id_post" value="<?=$data[0]->getId()?>"/>
 
                 <?php if(isset($_SESSION['pseudo'])):?>
 

@@ -98,28 +98,31 @@ else
 ********************************************* -->
 <footer id="footer">
     <div>
-    <nav id="navFooter">
-        <ul>
-            <li><a href="#"> <i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
-            <li><a href="#"> <i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
-            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li>
-            <li><a href="#"> <i class="fa fa-youtube-play" aria-hidden="true"></i> Youtube</a></li>
-            <li><a href="#"> <i class="fa fa-envelope" aria-hidden="true"></i> E-mail</a></li>
-        </ul>
-    </nav>
+        <nav id="navFooter">
+            <ul>
+                <li><a href="#"> <i class="fa fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+                <li><a href="#"> <i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+                <li><a href="#"> <i class="fa fa-youtube-play" aria-hidden="true"></i> Youtube</a></li>
+                <li><a href="#"> <i class="fa fa-envelope" aria-hidden="true"></i> E-mail</a></li>
+            </ul>
+        </nav>
 
-    <div> <img src="Public/img/logoFooter.png" alt="jeanforteroche" style="text-align: center; width: 100%;"> </div>
+        <div>
+            <img src="Public/img/logoFooter.png" alt="jeanforteroche" style="text-align: center; width: 100%;">
+        </div>
 
-    <nav id="navFooter2">
-        <ul>
-            <li><a href="#">Mentions légales</a></li>
-            <li><a href="#">CGU</a></li>
-            <li><a href="#">Partenaires</a></li>
-        </ul>
-    </nav>
-    <p id="copyr">Copyright 2018 - Bourgine Bérenger FAGADE</p>
+        <nav id="navFooter2">
+            <ul>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">CGU</a></li>
+                <li><a href="#">Partenaires</a></li>
+            </ul>
+        </nav>
+        <p id="copyr"> Copyright 2018 - Bourgine Bérenger FAGADE </p>
     </div>
 </footer>
+
 
 <!-- Javascript -->
 <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>

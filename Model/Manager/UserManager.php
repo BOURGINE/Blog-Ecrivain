@@ -10,6 +10,7 @@ namespace BlogEcrivain\Model\Manager;
 
 // Je definis l'emplacement des class je vais utiliser
 use BlogEcrivain\Model\Entity\User;
+use PDO;
 
 class UserManager extends Connex_Db
 {
@@ -212,7 +213,7 @@ class UserManager extends Connex_Db
         * */
 
         if ($resultat && $isPasswordCorrect){
-            session_destroy();
+            //session_destroy();
             session_start();
             $_SESSION['id'] = $resultat['id'];
             $_SESSION['pseudo'] = $resultat['pseudo'];

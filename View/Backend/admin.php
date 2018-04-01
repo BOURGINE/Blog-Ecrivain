@@ -28,11 +28,11 @@ include("../BlogEcrivain/View/Frontend/Menu.php");
     <div class="section_articles">
         <h3>Liste des articles déjà publiés</h3>
         <!-- Billets -->
-        <?php if(empty($posts)):?>
+        <?php if(empty($data[0])):?>
             <p> il n'y a aucun contact</p>
         <?php else:?>
 
-            <?php if($posts === false):?>
+            <?php if($data[0] === false):?>
                 <p> Une erreur vient de se produire</p>
             <?php else:?>
                 <table>
@@ -43,7 +43,7 @@ include("../BlogEcrivain/View/Frontend/Menu.php");
 
                     </tr>
 
-                    <?php foreach ($posts as $post):?>
+                    <?php foreach ($data[0] as $post):?>
                     <tr>
                         <td> <?= $post->getDate();?> </td>
                         <td> <?= $post->getTitle();?> </td>
@@ -66,11 +66,11 @@ include("../BlogEcrivain/View/Frontend/Menu.php");
     <div class="section_articles">
         <h3>Liste des commentaires</h3>
 
-        <?php if(empty($comments)):?>
+        <?php if(empty($data[1])):?>
             <p> il n'y a aucun contact</p>
 
         <?php else:?>
-            <?php if($comments === false):?>
+            <?php if($data[1] === false):?>
                 <p> Une erreur vient de se produire</p>
 
             <?php else:?>
@@ -84,7 +84,7 @@ include("../BlogEcrivain/View/Frontend/Menu.php");
                         <th colspan="2"> Action </th>
                     </tr>
 
-                    <?php foreach ($comments as $comment):?>
+                    <?php foreach ($data[1] as $comment):?>
                         <tr>
                             <td> <?= $comment->getAuthor();?>  </td>
                             <td> <?= $comment->getDate();?> </td>
@@ -116,11 +116,11 @@ include("../BlogEcrivain/View/Frontend/Menu.php");
     <div class="section_articles">
         <h3>Liste utilisateurs</h3>
         <!-- Billets -->
-        <?php if(empty($users)):?>
+        <?php if(empty($data[2])):?>
             <p> il n'y a aucun membre</p>
         <?php else:?>
 
-            <?php if($users === false):?>
+            <?php if($data[2] === false):?>
                 <p> Une erreur vient de se produire</p>
             <?php else:?>
 
@@ -131,7 +131,7 @@ include("../BlogEcrivain/View/Frontend/Menu.php");
                         <th> ACTIONS </th>
                     </tr>
 
-                    <?php foreach ($users as $user):?>
+                    <?php foreach ($data[2] as $user):?>
                         <tr>
                             <td> <?= $user->getRole();?>  </td>
                             <td> <?= $user->getPseudo();?></td>

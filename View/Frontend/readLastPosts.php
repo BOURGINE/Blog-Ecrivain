@@ -75,7 +75,7 @@ include("slides.php");
                         <div class="billets">
 
                             <figure class="imgBillets">
-                                <img src="../Projet4/Public/imgUpload/<?= $post->getImg();?>"/>
+                                <img src="../BlogEcrivain/Public/imgUpload/<?= $post->getImg();?>"/>
                             </figure>
 
                             <!-- Corps billet -->

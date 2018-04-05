@@ -25,7 +25,7 @@ include("menu.php");
     <div id="session_all_post">
 
         <!-- Titre -->
-        <div class="titre1" style="border: 2px red solid;">
+        <div class="titre1">
             <div class="titre2">
                 <h1> CHAPITRES </h1>
             </div>
@@ -60,7 +60,7 @@ include("menu.php");
                             <!-- Footer billet -->
                             <div class="footerBillets">
 
-                                <div> <a href="index.php?action=readPost&id=<?=$post->getId()?>"> LIRE PLUS... </a> </div>
+                                <div> <a href="index.php?action=readPost&id=<?=$post->getId()?>" class="lire"> LIRE PLUS... </a> </div>
 
                             </div>
                         </div>

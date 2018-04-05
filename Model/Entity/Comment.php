@@ -51,13 +51,13 @@ class Comment
     {
 
         if(!isset($author) && !is_string($this->author)){
-            echo 'la fonction getTitle a du mal a récupérer le titre';
+            echo 'la fonction Author du mal a récupérer l auteur';
         }
         return (string) htmlspecialchars($this->author);
     }
 
     /**
-     * @param mixed $auteur
+     * @param mixed $author
      * @return $this
      */
 
@@ -66,7 +66,8 @@ class Comment
         if(!isset($author) && !is_string($author))
         {
             echo'le titre n\'est pas bien définie';
-        }else{
+        }
+        else{
             $this->author = htmlspecialchars($author);
         }
         return $this;
@@ -113,15 +114,26 @@ class Comment
      */
     public function getStatComment()
     {
+        if (!is_string($this->stat_comment)){
+            echo 'Problème avec le getStatComment ';
+        }
         return $this->stat_comment;
     }
 
     /**
      * @param mixed $stat_comment
+     * @return $this
      */
     public function setStatComment($stat_comment)
     {
-        $this->stat_comment = $stat_comment;
+        if(!isset($stat_comment) && !is_string($stat_comment))
+        {
+            echo'le stat_Comment n\'est pas bien définie';
+        }else{
+            $this->stat_comment = htmlspecialchars($stat_comment);
+        }
+        return $this;
+
     }
 
 

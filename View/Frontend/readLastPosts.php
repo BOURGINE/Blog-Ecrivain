@@ -44,7 +44,7 @@ include("slides.php");
         <p>
             Quare talis improborum consensio non modo excusatione amicitiae tegenda non est sed potius supplicio omni vindicanda est, ut ne quis concessum putet amicum vel bellum patriae inferentem sequi; quod quidem, ut res ire coepit, haud scio an aliquando futurum sit. Mihi autem non minori curae est, qualis res publica post mortem meam futura, quam qualis hodie sit.
             Quare talis improborum consensio non modo excusatione amicitiae tegenda non est sed potius supplicio omni vindicanda est, ut ne quis concessum putet amicum vel bellum patriae inferentem sequi; quod quidem, ut res ire coepit, haud scio an aliquando futurum sit. Mihi autem non minori curae est, qualis res publica post mortem meam futura, quam qualis hodie sit.
-            <a href="index.php?action=biblio"> Lire plus... </a>
+            <a href="index.php?action=biblio" > Lire plus... </a>
         </p>
 
     </div>
@@ -53,7 +53,7 @@ include("slides.php");
     <div id="station">
 
         <!-- Titre -->
-        <div class="titre1" style="border: 2px red solid;">
+        <div class="titre1">
             <div class="titre2">
                 <h1>DERNIERS ARTICLES </h1>
             </div>
@@ -88,7 +88,7 @@ include("slides.php");
                             <!-- Footer billet -->
                             <div class="footerBillets">
 
-                                <div> <a href="index.php?action=readPost&id=<?=$post->getId()?>"> LIRE PLUS... </a> </div>
+                                <div> <a href="index.php?action=readPost&id=<?=$post->getId()?>" class="lire"> LIRE PLUS... </a> </div>
 
                             </div>
                         </div>

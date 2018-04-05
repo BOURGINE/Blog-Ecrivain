@@ -153,7 +153,11 @@ try {
 
         elseif ($_GET['action'] == 'chapitres')
         {
-            $controller->readAllPosts();
+
+
+
+
+            $controller->readAllPostsByPage();
         }
 
 

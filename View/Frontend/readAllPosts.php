@@ -1,6 +1,48 @@
+<?php $title = 'read All posts'; ?>
+
+<?php ob_start(); ?>
 <?php
 
-$title = 'read All posts'; ?>
+$pagination='';
+
+if($this->last_page != 1)
+{
+    if($this->page_num > 1)
+    {
+        $previous = $this->page_num-1;
+        $pagination = '<a href="index.php?action=chapitres&p='.$previous.'"> Précédent</a> &nbsp; &nbsp;';
+
+        for ($i = $this->page_num - $this->num_max_before_after; $i<$this->page_num; $i++){
+            if($i>0)
+            {
+                $pagination .='<a href="index.php?action=chapitres&p='.$i.'">'.$i.'</a> &nbsp;';
+            }
+        }
+
+    }
+
+    $pagination .='<span class="active">'.$this->page_num.'</span> &nbsp;';
+
+    for ($i = $this->page_num +1; $i <= $this->last_page ; $i++){
+
+        $pagination .='<a href="index.php?action=chapitres&p='.$i.'">'.$i.'</a>';
+
+        if($i >= $this->page_num + $this->num_max_before_after)
+        {
+            break;
+        }
+    }
+
+    if($this->page_num!= $this->last_page)
+    {
+        $next = $this->page_num + 1;
+        $pagination .='<a href="index.php?action=chapitres&p='.$next.'"> Suivant </a>';
+    }
+
+}
+
+
+?>
 
 <!--**********************************************
                     LOGO & Titre du livre
@@ -12,6 +54,7 @@ include("logo.php");
                     MENU
 **************************************************-->
 <?php
+
 include("menu.php");
 ?>
 
@@ -34,16 +77,16 @@ include("menu.php");
 
         <!-- Billets -->
         <div id="section_billets">
-            <?php if(empty($data)):?>
+            <?php if(empty($posts)):?>
              <p> il n'y a aucun contact</p>
 
             <?php else:?>
-                <?php if($data === false):?>
+                <?php if($posts === false):?>
                     <p> Une erreur vient de se produire</p>
 
                 <?php else:?>
 
-                    <?php foreach ($data as $post):?>
+                    <?php foreach ($posts as $post):?>
                         <div class="billets">
 
                             <figure class="imgBillets">
@@ -72,4 +115,11 @@ include("menu.php");
 
     </div> <!-- Fin Station -->
 
+    <?php echo '<div id="pagination">'.$pagination.'</div>'?>
+
 </section> <!--FIn application-->
+
+
+<?php $content = ob_get_clean(); ?>
+
+<?php require('../BlogEcrivain/View/template.php'); ?>

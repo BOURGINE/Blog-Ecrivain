@@ -17,6 +17,16 @@ class PostManager extends Connex_Db
 {
     private $pdoStatement;
 
+    private $posts_by_page = 4;
+
+    private $nbre_max_gauche_et_droit = 4;
+
+    private $total_posts;
+
+    private $last_page;
+
+    private $page_num;
+
 
     /**
      *
@@ -88,7 +98,7 @@ class PostManager extends Connex_Db
     }
 
     /**
-     * Cette fonction lira toutes les articles
+     * Cette fonction lira toutes les articles pour la back office
      **/
 
     public function readAll()
@@ -107,6 +117,82 @@ class PostManager extends Connex_Db
         }
         //3- On retourne le table finalisé.
         return $posts;
+    }
+
+
+    /**
+     * Cette fonction définira le nombre total de Posts
+     **/
+
+    public function allPostsNumber()
+    {
+        $this->pdoStatement = $this->pdo->query('SELECT id FROM post');
+
+        $total_posts =  $this->pdoStatement->rowCount();
+
+        //3- On retourne le table finalisé.
+        return $total_posts;
+    }
+
+    /**
+     * Cette fonction définira le nombre total de Posts
+     **/
+
+    public function pageCount()
+    {
+        $this->last_page= ceil($this->total_posts/$this->posts_by_page);
+    }
+
+
+    /**
+     * Cette fonction lira toutes les articles par 8 x 8
+     **/
+
+    public function readAllByPage()
+    {
+        // Les conditions
+
+        if(isset($_GET['p']) && is_numeric($_GET['p']))
+        {
+            $this->page_num = $_GET['p'];
+        }
+        else
+        {
+            $this->page_num = 1;
+        }
+
+        if($this->page_num < 1)
+        {
+            $this->page_num = 1;
+        }
+        elseif($this->page_num > $this->last_page)
+        {
+            $this->page_num = $this->last_page;
+        }
+
+        // LA REQUETTE
+
+        $depart = ($this->page_num - 1)*$this->posts_by_page;
+
+        $this->pdoStatement = $this->pdo->query("SELECT * FROM post ORDER BY id DESC LIMIT '.$depart.','.$this->posts_by_page.'");
+
+        // récupération de résultats tableau. Un tableau se récupère en 3 étapes
+
+        $posts = $this->pdoStatement->execute();
+
+        //1- initialisation du tableau vide
+        $posts=[];
+
+        // 2-On ajoute au table chaque ligne.
+        while($post=$this->pdoStatement->fetchObject('BlogEcrivain\Model\Entity\Post'))
+        {
+            $posts[]=$post;
+        }
+
+        //3- On retourne le table finalisé.
+        return $posts;
+
+
     }
 
     /**
@@ -195,6 +281,9 @@ class PostManager extends Connex_Db
             return $this->update($post);
         }
     }
+
+
+
 
 
 

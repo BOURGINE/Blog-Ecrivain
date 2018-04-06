@@ -178,7 +178,6 @@ class PostManager extends Connex_Db
 
         // récupération de résultats tableau. Un tableau se récupère en 3 étapes
 
-        $posts = $this->pdoStatement->execute();
 
         //1- initialisation du tableau vide
         $posts=[];

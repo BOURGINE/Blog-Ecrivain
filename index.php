@@ -5,6 +5,7 @@ require"Autoload/Autoloader.php";
 use Autoload\Autoloader;
 Autoloader::register();
 
+
 use BlogEcrivain\View\View;
 
 use BlogEcrivain\Model\Entity\Post;

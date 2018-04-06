@@ -305,7 +305,7 @@ class PostController
             $this->page_num = 1;
         }
 
-        if($this->page_num < 1)
+        if($this->page_num <= 1)
         {
             $this->page_num = 1;
         }

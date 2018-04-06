@@ -161,7 +161,7 @@ class PostManager extends Connex_Db
             $this->page_num = 1;
         }
 
-        if($this->page_num < 1)
+        if($this->page_num <= 1)
         {
             $this->page_num = 1;
         }
@@ -174,10 +174,7 @@ class PostManager extends Connex_Db
 
         $depart = ($this->page_num - 1)*$this->posts_by_page;
 
-        $this->pdoStatement = $this->pdo->query("SELECT * FROM post ORDER BY id DESC LIMIT '.$depart.','.$this->posts_by_page.'");
-
-        // récupération de résultats tableau. Un tableau se récupère en 3 étapes
-
+        $this->pdoStatement = $this->pdo->query("SELECT * FROM post ORDER BY id DESC LIMIT $depart , $this->posts_by_page");
 
         //1- initialisation du tableau vide
         $posts=[];

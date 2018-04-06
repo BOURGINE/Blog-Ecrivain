@@ -1,0 +1,640 @@
+*{ /*-------- Pour tous------------------*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    width:100%;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.lire
+{
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+}
+
+/*-------------------------------
+    BANDE NOIRE
+ ---------------------------------*/
+#bandeNoire
+{
+    height: 40px;
+    background-color: black;
+    width: 100%;
+    display: flex;
+}
+
+#chapitres
+{
+    background: darkblue;
+    color: white;
+    font-size: 20px;
+    padding: 5px; 
+    width: auto;
+    min-width: 200px;
+}
+
+#fleches
+{
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+    width: 60px;
+    min-width: 60px;
+}
+
+#prev1, #next1 {
+    cursor: pointer; /*Code 606: La nouvelle propriété que je viens apprendre*/
+    padding-left: 5px;
+}
+
+
+
+#resoSocio
+{
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+}
+
+#resoSocio ul li, #espaceConnexion ul li 
+{ 
+    display: inline-block;
+    list-style: none; 
+    margin-left: 10px;
+}
+
+#resoSocio ul li a, #espaceConnexion ul li a
+{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+#espaceConnexion
+{
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+}
+
+#titreChapitre
+{
+    width: 40%;
+    color: white;
+    overflow: hidden;
+}
+
+.slideTitre
+{
+    height: 40px;
+    padding: 5px;
+    display: none;
+}
+
+/*-------------------------------
+                MENU
+ ---------------------------------*/
+#menu
+{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width:100%;
+    background-color: white;
+    padding: 7px 10px;
+    border-top: 1px grey solid;
+    border-bottom: 1px grey solid;
+    
+}
+
+#menu ul li, #navFooter ul li, #navFooter2 ul li
+{ 
+    display: inline-block;
+    list-style: none;  
+}
+
+#menu ul li a, #navFooter ul li a, #navFooter2 ul li a
+{
+    display: block;
+    text-decoration: none;
+    color: grey;
+    font-size: 20px;
+    padding: 10px;
+}
+
+/*-------------------------------
+        MON LOGO
+ ---------------------------------*/
+#section_logo
+{
+    width: 100%;
+}
+
+#logo
+{
+   width: 100%;
+}
+
+#textLogo
+{
+    color: rebeccapurple;
+    font-size: 20px;
+    text-align: center;
+    margin-top: -30px;
+    font-style: italic;
+}
+
+/*----------------------------------------
+		SLIDESHOW
+-----------------------------------------*/
+#section_slideshow
+{
+    width: 100%;
+}
+
+#slideshow
+{
+    width: 80%;
+    position:relative;
+    margin: auto;
+    border-left: 10px solid black;
+    border-right: 10px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    
+}
+
+.slide
+{
+    border: 10px white solid;
+    display: none;
+    
+}
+
+
+figure img
+{
+    width: 100%;
+    height: 100%;
+}
+
+/* Gestion du texte du slide*/
+
+.text
+{
+    text-align: center;
+    position: absolute;
+    font-size: 20px;
+    width: 100%;
+    padding: 8px 16px;
+    bottom: 8px;
+    color: black;
+    font-weight: bold;
+    background: grey;
+}
+
+/*  Création et gestion des bouttons de défilement */
+
+#prev, #next {
+    position: absolute;
+    top: 40%;
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 50px;
+    border-radius: 0 3px 3px 0;
+    padding: 10px;
+    cursor: pointer; /*Code 606: La nouvelle propriété que je viens apprendre*/
+}
+
+#prev 
+{
+    background-color: rgba(0,0,0,0.6);    
+}
+
+#next 
+{
+    right: 0;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 3px 0 0 3px;
+}
+
+/* l'effet fondu lors du changement d'image*/
+
+
+.fade{
+    animation-name: fade;
+    animation-duration: 1s;   
+    }
+
+@keyframes fade{
+    from{opacity: 0.4}
+    to{opacity: 1}
+}
+
+/*-----------------------------------------------
+ 			    APPLICATION = 
+            BIBLIO + DERNIERS ARTICLES
+ ---------------------------------------------*/
+#application
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.titre1
+{
+    border: 1px black solid;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    border-bottom: 1px white solid;
+}
+
+.titre2
+{
+    border: 1px black solid;
+    width: auto;
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px; 
+}
+
+h1
+{
+    font-size: 20px; 
+    text-align: center;
+    margin-top: 10px;
+    
+}
+
+/*--------------------------
+ 	  BIBLIO
+ ---------------------------*/
+#biblio{
+    width: 30%;
+    height: auto;
+    padding: 5px;
+}
+
+#photo_auteur
+{
+    width: 100%;
+    height: 200px;
+}
+
+/*--------------------------
+ 	  DERNIERS ARTICLES
+ ---------------------------*/
+#station
+{   
+    width: 70%;
+    padding: 5px;
+}
+
+
+#section_billets
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.billets
+{
+    width: 260px;
+    height: 350px;
+    box-shadow:  10px 10px 10px 10px grey;
+    margin: 10px;
+}
+
+.billets h3, .billets h2
+{
+    text-align: center;
+    color: darkblue;
+}
+
+.imgBillets
+{
+    width: 100%;
+    height: 50%;
+}
+
+.imgBillets img
+{
+    width: 100%;
+}
+
+.corpsBillets
+{
+    min-height: 40%;
+    background: white;
+    text-align:justify;
+}
+
+.footerBillets
+{
+    height: 10%;
+    background: grey;
+    text-align: right;
+    margin: auto;
+}
+
+/*--------------------------
+ 	  tous les ARTICLES
+ ---------------------------*/
+#session_all_post
+{
+    width: 100%;
+    padding: 5px;
+}
+
+/*--------------------------
+ 	  footer
+ ---------------------------*/
+#footer
+{
+	background-color: black;
+}
+
+#navFooter
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width:100%;
+    padding: 7px 10px;
+    border-top: 2px grey solid;
+    border-bottom: 2px grey solid;
+}
+
+#navFooter2
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width:100%;
+    padding: 7px 10px;
+}
+
+
+#copyr
+{
+    color: white;
+    text-align: center;
+}
+
+/* ---------------------------------------------------
+ 		
+        *PAGE CONNEXION* FORMULAIRES D'INSCRIPTION
+
+ -----------------------------------------------------*/
+
+#pageConnexion
+{   
+    width: 300px;
+    height: auto;
+    border: 1px grey solid;
+    border-radius: 5px; 
+    margin: auto; 
+    padding: 20px;
+    margin-top: 20px;
+}
+#pseudo, #pass
+{
+    margin-left: 0px;
+    width: 250px;
+}
+/* ------------------------------------------
+
+        PAGE DE CHAQUE ARTICLE
+
+ -------------------------------------------*/
+
+#station_lecture
+{
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#station_lecture img
+{
+    width: 60%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.sectioncomment
+{
+    border: 3px white solid;
+    background-color: #CCCCCC;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#form_createComment
+{
+    display: flex;
+    flex-direction: column;
+    background: #CCCCCC;
+}
+
+#button
+{
+    text-align:center;
+    background-color: dodgerblue;
+    width: 100px;
+    height: 20px;
+    font-weight: bold
+}
+
+/* ------------------------------------------
+                 PAGE ADMIN
+ -------------------------------------------*/
+
+.section_articles
+{
+    border: 2px cornflowerblue solid;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+table
+{
+    border-collapse: collapse;
+    align-self: center;
+    
+}
+td, th
+{
+    border: 2px solid black;
+    padding: 5px;
+}
+
+#moderé_vert
+{
+    background-color: greenyellow;
+}
+
+#signalé_rouge
+{
+    background-color: red;
+}
+
+#moderer_jaune
+{
+    background-color: yellow;
+}
+
+/* ---------------------------------------------------
+
+ 		*Début des @medias queries*
+
+ -----------------------------------------------------*/
+
+ /* ------------------------------
+        (0 à 299px)
+ ---------------------------------*/
+
+@media screen and (max-width:299px) {
+    
+    
+    
+    #section_slideshow, #chapitres, #fleches, #titreChapitre
+    {
+        display: none;
+    }
+
+    #biblio, #station
+    {
+        width: 100%;
+    }
+    
+}
+
+/* ------------------------------
+        (300 à 499px)
+ ---------------------------------*/
+
+@media screen and (min-width:300px) and (max-width:499px) {
+
+
+    #section_slideshow, #chapitres, #fleches, #titreChapitre
+    {
+        display: none;
+    }
+
+    #biblio, #station
+    {
+        width: 100%;
+    }
+}
+
+/* ------------------------------
+        (500 à 599px)
+ ---------------------------------*/
+
+
+@media screen and (min-width:500px) and (max-width:599px) {
+  
+    
+    nav, #section_slideshow, #chapitres, #fleches, #titreChapitre
+    {
+    display: none;
+    }
+
+    #biblio, #station
+    {
+        width: 100%;
+    }
+
+}
+
+
+ /* ------------------------------
+        ( 600px à 699px)
+ ---------------------------------*/
+
+@media screen and (min-width:600px) and (max-width:699px) {
+    
+    
+    #prev, #next {
+ 
+    top: 30%;
+    font-size: 50px;
+    padding: 10px;
+    
+    }
+
+    #biblio, #station
+    {
+        width: 100%;
+    }
+
+
+
+
+}
+
+/* ------------------------------
+        ( 700px à 799px)
+ ---------------------------------*/
+@media screen and (min-width:700px) and (max-width:799px) {
+   
+    
+    #prev, #next
+    {
+        top: 30%;
+        font-size: 50px;
+        padding: 10px;
+    }
+} 
+
+/* ------------------------------
+        ( 800px à 999px)
+ ---------------------------------*/
+@media screen and (min-width:800px) and (max-width:999px) {
+   
+   #prev, #next
+   {
+        top: 30%;
+        font-size: 50px;
+        padding: 10px;
+    } 
+    
+}
+
+/* ------------------------------
+        ( 1000px à 1999px)
+ ---------------------------------*/
+@media screen and (min-width:1000px) and (max-width:1199px) {
+   
+   #prev, #next {
+ 
+    top: 35%;
+    font-size: 50px;
+    padding: 10px;
+    
+    } 
+    
+}
+
+
+
+

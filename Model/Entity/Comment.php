@@ -49,7 +49,6 @@ class Comment
      */
     public function getAuthor()
     {
-
         if(!isset($author) && !is_string($this->author)){
             echo 'la fonction Author du mal a récupérer l auteur';
         }
@@ -78,7 +77,7 @@ class Comment
      */
     public function getTextComment()
     {
-        if (!is_string($this->text_comment)){
+        if (!isset($text_comment) && !is_string($this->text_comment)){
             echo 'Problème avec le getTextContent ';
         }
         return $this->text_comment;
@@ -90,10 +89,9 @@ class Comment
      */
     public function setTextComment($text_comment)
     {
-
         if(!isset($text_comment) && !is_string($text_comment))
         {
-            echo'le teComment n\'est pas bien définie';
+            echo'le text Comment n\'est pas bien définie';
         }else{
             $this->text_comment = htmlspecialchars($text_comment);
         }
@@ -133,7 +131,6 @@ class Comment
             $this->stat_comment = htmlspecialchars($stat_comment);
         }
         return $this;
-
     }
 
 

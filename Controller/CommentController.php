@@ -57,11 +57,7 @@ class CommentController extends PostController
             $message = 'Une erreur est arrivée';
         }
 
-        //NB: Ici je dois dire, redonne moi la page connexion
-        //si la session stockage pseudo et la session stockage pass sont égal à admin.
-
-        include(__DIR__ . "/../View/Backend/messageAdmin.php"); // Faire en sorte qu'il revienne à administration sans passer
-        // Par le connexion.
+        include(__DIR__ . "/../View/Backend/messageAdmin.php");
     }
 
     public function signaler()
@@ -73,7 +69,6 @@ class CommentController extends PostController
         $comment->setIdPost($_POST['id']);
 
         // Je sauvegarde mes informations dans la base de données
-
         $saveIsOk = $commentManager->updateSignal($comment);
 
         if($saveIsOk)

@@ -21,9 +21,13 @@ class PostController
 
     private $last_page;
 
-    private $page_num;
+    private $num_page;
 
-    private $num_max_before_after;
+    private $total_posts;
+
+    private $num_max_before_after = 2;
+
+    private $posts_by_page = 4;
 
     /**
      *   NAVIGATION ENTRE LES PAGES
@@ -248,84 +252,44 @@ class PostController
         include(__DIR__ . "/../View/Backend/messageAdmin.php");
     }
 
-    public function pagination()
-    {
-        $pagination='';
-
-        if($this->last_page != 1)
-        {
-            if($this->page_num > 1)
-            {
-                $previous = $this->page_num-1;
-                $pagination = '<a href="index.php?p='.$previous.'"> Précédent</a> &nbsp; &nbsp;';
-
-                for ($i = $this->page_num - $this->num_max_before_after; $i<$this->page_num; $i++){
-                    if($i>0)
-                    {
-                        $pagination .='<a href="index.php?p='.$i.'">'.$i.'</a> &nbsp;';
-                    }
-                }
-
-            }
-
-            $pagination .='<span class="active">'.$this->page_num.'</span>$nbsp;';
-
-            for ($i = $this->page_num +1; $i <= $this->last_page ; $i++){
-
-                $pagination .='<a href="index.php?p='.$i.'">'.$i.'</a>';
-
-                if($i >= $this->page_num + $this->num_max_before_after)
-                {
-                    break;
-                }
-            }
-
-            if($this->page_num!= $this->last_page)
-            {
-                $next = $this->page_num + 1;
-                $pagination .='<a href="index.php?p='.$next.'"> Suivant </a>';
-            }
-
-        }
-
-        
-    }
 
 
     public function readAllPostsByPage()
     {
-        // condition ici
+        // Je récupère le nombre total de Post ($total_Post)
+        $postManager= new PostManager();
+        $this->total_posts = $postManager->totalPosts();
+
+        // Je récupère le nombre total de page
+        $this->last_page = ceil($this->total_posts/$this->posts_by_page);
+
+        // condition Pour lire la pagination
 
         if(isset($_GET['p']) && is_numeric($_GET['p']))
         {
-            $this->page_num = $_GET['p'];
+            $this->num_page = $_GET['p'];
         }
         else
         {
-            $this->page_num = 1;
+            $this->num_page = 1;
         }
 
-        if($this->page_num <= 1)
+        if($this->num_page <= 1)
         {
-            $this->page_num = 1;
+            $this->num_page = 1;
         }
-        elseif($this->page_num > $this->last_page)
+        elseif($this->num_page > $this->last_page)
         {
-            $this->page_num = $this->last_page;
+            $this->num_page= $this->last_page;
         }
 
-        // On instancie la classe ContactManager et on appelle la méthode readAll
-
+        // LECTURE DES ARTICLES 8x8
         $postManager = new PostManager();
         $posts = $postManager->readAllByPage();
 
-       // $view= new View();
-        //$view->ShowFrontPage("ReadAllPosts", $posts);
 
         include(__DIR__ . "/../View/Frontend/readAllPosts.php");
     }
-
-
 
 
 
@@ -348,7 +312,6 @@ class PostController
 
         //include(__DIR__ . "/../View/Backend/admin.php");
     }
-
 
 
 

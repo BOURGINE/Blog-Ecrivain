@@ -3,7 +3,7 @@
 if (isset($_SESSION['pseudo']))
 {
     //Affiche les infos de la session
-    $info1 = '<span class="glyphicon glyphicon-user"></span> Hello '.ucfirst($_SESSION['pseudo']).' !';
+    $info1 = '<span class="glyphicon glyphicon-user"></span> HELLO '.ucfirst($_SESSION['pseudo']).' !';
     $info2 = '<a href="index.php?action=deconnexion"> <i class="fa fa-sign-out" aria-hidden="true"></i> DECONNEXION</a>';
 }
 else
@@ -51,22 +51,6 @@ else
 
 <section id="bandeNoire">
 
-    <div id="chapitres"> Derniers chapitres
-    </div>
-
-    <div id="fleches">
-        <a id="prev1">&#10094</a>
-        <a id="next1">&#10095</a>
-    </div>
-
-    <div id="titreChapitre">
-        <div class="slideTitre" style="display: block"> Titre derniers </div>
-        <div class="slideTitre" >Titre dernier - 1</div> <!--récupérer le titre en php -->
-        <div class="slideTitre">Titre dernier - 2</div> <!--récupérer le titre en php -->
-        <div class="slideTitre">Titre dernier - 3</div>  <!--récupérer le titre en php -->
-        <div class="slideTitre">Titre dernier - 4</div> <!--récupérer le titre en php -->
-    </div>
-
     <div id="resoSocio"> <!--reseaux socio -->
         <ul>
             <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
@@ -109,7 +93,7 @@ else
         </nav>
 
         <div>
-            <img src="Public/img/logoFooter.png" alt="jeanforteroche" style="text-align: center; width: 100%;">
+            <img src="Public/img/logoFooter.png" alt="jeanforteroche">
         </div>
 
         <nav id="navFooter2">

@@ -19,13 +19,13 @@ class PostManager extends Connex_Db
 
     private $posts_by_page = 4;
 
-    private $nbre_max_gauche_et_droit = 4;
+    private $num_max_before_after = 2;
 
     private $total_posts;
 
     private $last_page;
 
-    private $page_num;
+    private $num_page;
 
 
     /**
@@ -120,61 +120,61 @@ class PostManager extends Connex_Db
     }
 
 
-    /**
-     * Cette fonction définira le nombre total de Posts
-     **/
-
-    public function allPostsNumber()
+    public function totalPosts()
     {
+        // Nombre total de Posts
         $this->pdoStatement = $this->pdo->query('SELECT id FROM post');
+        $this->total_posts =  $this->pdoStatement->rowCount();
 
-        $total_posts =  $this->pdoStatement->rowCount();
-
-        //3- On retourne le table finalisé.
-        return $total_posts;
+        $resultat = $this->total_posts;
+        return $resultat;
     }
-
-    /**
-     * Cette fonction définira le nombre total de Posts
-     **/
-
-    public function pageCount()
-    {
-        $this->last_page= ceil($this->total_posts/$this->posts_by_page);
-    }
-
 
     /**
      * Cette fonction lira toutes les articles par 8 x 8
+     * @param num_page
      **/
 
     public function readAllByPage()
     {
-        // Les conditions
+
+        $this->total_posts =$this->totalPosts();
+
+        // Le nombre total de PAGE
+        $this->last_page = ceil($this->total_posts/$this->posts_by_page);
+
+        // GERER LE $THIS->
 
         if(isset($_GET['p']) && is_numeric($_GET['p']))
         {
-            $this->page_num = $_GET['p'];
+            $this->num_page = $_GET['p'];
         }
         else
         {
-            $this->page_num = 1;
+            $this->num_page = 1;
         }
 
-        if($this->page_num <= 1)
+        if($this->num_page <=1)
         {
-            $this->page_num = 1;
-        }
-        elseif($this->page_num > $this->last_page)
-        {
-            $this->page_num = $this->last_page;
+            $this->num_page = 1;
         }
 
+        elseif($this->num_page > $this->last_page)
+        {
+            $this->num_page = $this->last_page;
+        }
+
+        //pagination ici, dans l'index? ?
+        //var_dump($num_page);
         // LA REQUETTE
 
-        $depart = ($this->page_num - 1)*$this->posts_by_page;
+        $depart = ($this->num_page - 1)*$this->posts_by_page;
 
-        $this->pdoStatement = $this->pdo->query("SELECT * FROM post ORDER BY id DESC LIMIT $depart , $this->posts_by_page");
+        //$limit= 'LIMIT '.($this->page_num - 1)* $this->posts_by_page.','.$this->posts_by_page;
+
+        //var_dump($depart);
+
+        $this->pdoStatement = $this->pdo->query("SELECT * FROM post ORDER BY id DESC LIMIT $depart,$this->posts_by_page");
 
         //1- initialisation du tableau vide
         $posts=[];
@@ -187,8 +187,6 @@ class PostManager extends Connex_Db
 
         //3- On retourne le table finalisé.
         return $posts;
-
-
     }
 
     /**

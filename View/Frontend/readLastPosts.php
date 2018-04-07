@@ -33,7 +33,7 @@ include("slides.php");
 
         <div class="titre1">
             <div class="titre2">
-                <h1>Qui est Jean FORTEROCHE ? </h1>
+                <h1> JEAN FORTEROCHE  </h1>
             </div>
         </div>
 

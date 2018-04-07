@@ -1,18 +1,21 @@
 <?php $title = 'read All posts'; ?>
 
-<?php ob_start(); ?>
-<?php
+<?php ob_start();
+
+
+// GESTION DE PAGINATION
 
 $pagination='';
 
+
 if($this->last_page != 1)
 {
-    if($this->page_num > 1)
+    if($this->num_page > 1)
     {
-        $previous = $this->page_num-1;
+        $previous = $this->num_page-1;
         $pagination = '<a href="index.php?action=chapitres&p='.$previous.'"> Précédent</a> &nbsp; &nbsp;';
 
-        for ($i = $this->page_num - $this->num_max_before_after; $i<$this->page_num; $i++){
+        for ($i = $this->num_page - $this->num_max_before_after; $i<$this->num_page; $i++){
             if($i>0)
             {
                 $pagination .='<a href="index.php?action=chapitres&p='.$i.'">'.$i.'</a> &nbsp;';
@@ -21,28 +24,30 @@ if($this->last_page != 1)
 
     }
 
-    $pagination .='<span class="active">'.$this->page_num.'</span> &nbsp;';
+    $pagination .='<span class="active">'.$this->num_page.'</span> &nbsp;';
 
-    for ($i = $this->page_num +1; $i <= $this->last_page ; $i++){
+    for ($i = $this->num_page +1; $i <= $this->last_page ; $i++){
 
         $pagination .='<a href="index.php?action=chapitres&p='.$i.'">'.$i.'</a>';
 
-        if($i >= $this->page_num + $this->num_max_before_after)
+        if($i >= $this->num_page + $this->num_max_before_after)
         {
             break;
         }
     }
 
-    if($this->page_num!= $this->last_page)
+    // Si je ne suis pas sur la dernière page,
+    if($this->num_page!= $this->last_page)
     {
-        $next = $this->page_num + 1;
+        $next = $this->num_page + 1;
         $pagination .='<a href="index.php?action=chapitres&p='.$next.'"> Suivant </a>';
     }
-
 }
 
 
+
 ?>
+
 
 <!--**********************************************
                     LOGO & Titre du livre

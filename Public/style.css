@@ -22,41 +22,18 @@ a {
 }
 
 /*-------------------------------
-    BANDE NOIRE
+    BANDE Bleu
  ---------------------------------*/
 #bandeNoire
 {
-    height: 40px;
+    height: 50px;
     background-color: black;
     width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 20px;
 }
-
-#chapitres
-{
-    background: darkblue;
-    color: white;
-    font-size: 20px;
-    padding: 5px; 
-    width: auto;
-    min-width: 200px;
-}
-
-#fleches
-{
-    color: white;
-    font-size: 20px;
-    padding: 5px;
-    width: 60px;
-    min-width: 60px;
-}
-
-#prev1, #next1 {
-    cursor: pointer; /*Code 606: La nouvelle propriété que je viens apprendre*/
-    padding-left: 5px;
-}
-
-
 
 #resoSocio
 {
@@ -167,8 +144,6 @@ a {
     width: 80%;
     position:relative;
     margin: auto;
-    border-left: 10px solid black;
-    border-right: 10px solid black;
     border-radius: 10px;
     overflow: hidden;
     
@@ -176,7 +151,6 @@ a {
 
 .slide
 {
-    border: 10px white solid;
     display: none;
     
 }
@@ -289,8 +263,10 @@ h1
 
 #photo_auteur
 {
-    width: 100%;
+    width: 80%;
     height: 200px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 /*--------------------------

@@ -154,11 +154,7 @@ try {
 
         elseif ($_GET['action'] == 'chapitres')
         {
-
-
-
-
-            $controller->readAllPostsByPage();
+           $controller->readAllPostsByPage();
         }
 
 

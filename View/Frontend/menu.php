@@ -3,7 +3,7 @@
 
 if(isset($_SESSION['role']) && $_SESSION['role']=='1')
 {
-    $info3= '<a href="index.php?action=accesAdmin" style="color: red">  ESPACE ADMIN</a>';
+    $info3= '<a href="index.php?action=accesAdmin" style="color: red"> Administration</a>';
 
 }else{
     $info3= "";

@@ -204,9 +204,9 @@ try {
          *
          */
 
-        elseif($_GET['action'] == 'createComment') // Si on appel la fonction get delete et qu'il y a un Id
+        elseif($_GET['action'] == 'createComment') //
         {
-            if (!empty($_POST['author']) && !empty($_POST['text_comment']) && !empty($_POST['id_post']))
+            if (!empty($_POST['author']) && !isset($_POST['text_comment']) && !empty($_POST['id_post']))
             {
                 $commentController->createComment($_POST);
             }

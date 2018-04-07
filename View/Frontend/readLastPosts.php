@@ -96,9 +96,13 @@ include("slides.php");
 
                 <?php endif;?>
             <?php endif;?>
+
+            <div id="voir_plus">
+                <a href="index.php?action=chapitres&p=">
+                    <button id="voir_plus_button"> VOIR PLUS DE CHAPITRES</button>
+                </a>
+            </div>
         </div> <!-- fin section billet -->
 
     </div> <!-- Fin Station -->
-
-
 </section> <!--FIn application-->

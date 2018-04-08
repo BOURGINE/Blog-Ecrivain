@@ -34,7 +34,7 @@ $userController = new BlogEcrivain\Controller\UserController();
 
 try {
 
-    if (isset($_GET['action'])) // si une action est effectué par l'utilisateur
+    if(isset($_GET['action'])) // si une action est effectué par l'utilisateur
     {
 
         /**
@@ -177,7 +177,14 @@ try {
 
         elseif($_GET['action'] == 'readPost')
         {
-            $controller->readPost($_GET['id']);
+            if(is_numeric($_GET['id']))
+            {
+               $controller->readPost($_GET['id']);
+            }
+            else
+            {
+                throw new Exception('Cet id n\'est pas admis');
+            }
         }
 
 
@@ -234,14 +241,16 @@ try {
 
     }
 
-    else {
+    else
+    {
         $controller->readLastPost();
     }
 }
 
 // Si ces chose ne marchent pas affiche des messages d'erreurs
 catch
-(Exception $e) { // S'il y a eu une erreur, alors...
+(Exception $e)
+{ // S'il y a eu une erreur, alors...
     echo $e->getMessage();
 }
 

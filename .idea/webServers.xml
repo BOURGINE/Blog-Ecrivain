@@ -2,10 +2,10 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="7c52e334-b3ac-4a5e-9980-a506fb81d0cc" name="Projet" url="http://jeunesse-association.org">
-        <fileTransfer host="jeunesse-association.org" port="21">
+      <webServer id="f0e6651f-7992-49c6-b8b0-512de6a895aa" name="BlogEcrivain" url="http://projet4.recherchefinancement.org">
+        <fileTransfer host="projet4.recherchefinancement.org" port="21">
           <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
+            <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
           <option name="port" value="21" />
         </fileTransfer>

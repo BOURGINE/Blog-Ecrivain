@@ -92,7 +92,7 @@ else
         </nav>
 
         <div>
-            <img src="Public/img/logoFooter.png" alt="jeanforteroche">
+            <img src="Public/img/logoFooter.png" alt="jeanforteroche" style="width: 100%">
         </div>
 
         <nav id="navFooter2">

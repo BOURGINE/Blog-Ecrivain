@@ -119,7 +119,7 @@ class CommentManager extends Connex_Db
     }
 
     /**
-     *
+     * Cette fonction lit tous les articles liés à un post en partant de l'Id du post
      **/
 
     public function readAllByID($reception)
@@ -153,10 +153,14 @@ class CommentManager extends Connex_Db
         }
     }
 
+    /**
+     * Cette fonction lit tous les commentaires
+     * Cette fonction n'est pas utlisé mais pourra l'être sur demande du client.
+     **/
 
-    public function readAll()
+    public function readAllSignale()
     {
-        $this->pdoStatement = $this->pdo->query('SELECT * FROM comment ORDER BY date_comment DESC ');
+        $this->pdoStatement = $this->pdo->query("SELECT * FROM comment  WHERE stat_comment='signale' ORDER BY date_comment DESC ");
 
         // récupération de résultats tableau. Un tableau se récupère en 3 étapes
 
@@ -173,8 +177,63 @@ class CommentManager extends Connex_Db
         return $comments;
     }
 
+    /**
+     * Cette fonction lit tous les commentaires
+     * Cette fonction n'est pas utlisé mais pourra l'être sur demande du client.
+     **/
 
+    public function readAll()
+    {
+        $this->pdoStatement = $this->pdo->query("SELECT * FROM comment ORDER BY date_comment DESC ");
 
+        // récupération de résultats tableau. Un tableau se récupère en 3 étapes
+
+        //1- initialisation du tableau vide
+        $comments=[];
+
+        // 2-On ajoute au table chaque ligne.
+        while($comment=$this->pdoStatement->fetchObject('BlogEcrivain\Model\Entity\Comment'))
+        {
+            $comments[]=$comment;
+        }
+
+        //3- On retourne le table finalisé.
+        return $comments;
+    }
+
+    /**
+     * Cette fonction lit tous les commentaires par catégorie (signalé, modérés)
+     **/
+    public function readAllByStat($the_choix)
+    {
+        //préparation de la req
+        $this->pdoStatement=$this->pdo->prepare('SELECT * FROM comment WHERE stat_comment=:stat_comment');
+
+        // liaison de la req
+        $this->pdoStatement->bindValue(':stat_comment', $the_choix, PDO::PARAM_INT);
+
+        //exécution de la req
+        $executeIsOk = $this->pdoStatement->execute();
+        if($executeIsOk)
+        {
+            //1- initialisation du tableau vide
+            $comments=[];
+
+            // 2-On ajoute au table chaque ligne.
+            while($comment=$this->pdoStatement->fetchObject('BlogEcrivain\Model\Entity\Comment'))
+            {
+                $comments[]=$comment;
+            }
+
+            //3- On retourne le table finalisé.
+            return $comments;
+        }
+
+        else
+        {
+            return false;
+        }
+    }
 
     /**
      * Cette fonction permettra seulement accessible à l'utilisateur

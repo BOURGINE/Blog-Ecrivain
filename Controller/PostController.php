@@ -292,7 +292,6 @@ class PostController
     }
 
 
-
     public function readAllAdmin()
     {
         // 1- les posts
@@ -301,18 +300,35 @@ class PostController
 
         // 2- Les commentaires
         $commentManager = new CommentManager();
-        $comments= $commentManager->readAll();
+        $comments= $commentManager->readAllSignale();
 
         // 3- Les utilisateurs
         $userManager = new UserManager();
         $users= $userManager->readAll();
 
         $view= new View();
-        $view->ShowBackPage("admin", [$posts, $comments, $users]); // ("readLastPosts", $posts);
+        $view->ShowBackPage("admin", [$posts, $comments, $users]);
 
         //include(__DIR__ . "/../View/Backend/admin.php");
     }
 
 
+    public function BackReadCat($the_choix)
+    {
+        // 1- les posts
+        $postManager= new PostManager();
+        $posts= $postManager->readAll();
+
+        // 2- Les commentaires
+        $commentManager = new CommentManager();
+        $comments= $commentManager->readAllByStat($the_choix);
+
+        // 3- Les utilisateurs
+        $userManager = new UserManager();
+        $users= $userManager->readAll();
+
+        $view= new View();
+        $view->ShowBackPage("admin", [$posts, $comments, $users]);
+    }
 
 }

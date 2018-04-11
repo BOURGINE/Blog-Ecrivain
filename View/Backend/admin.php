@@ -20,17 +20,22 @@ include("../BlogEcrivain/View/Frontend/Menu.php");
                Il devrait afficher toutes les entités:Post - les commentaires - les users
     ****************************************************************************************-->
 <div>
-<h1> Administration </h1>
+<h1> BACK-OFFICE </h1>
 
     <!-- ****************************************
                  1- les articles
     ******************************************-->
     <div class="section_articles">
-        <h3>Liste des articles déjà publiés</h3>
+
+        <div class="titre_section_back">
+            <h3> Gestion des Articles </h3>
+        </div>
+
+        <div class="corp_session_back">
         <!-- Billets -->
-        <?php if(empty($data[0])):?>
-            <p> il n'y a aucun contact</p>
-        <?php else:?>
+            <?php if(empty($data[0])):?>
+                <p> il n'y a aucun contact</p>
+            <?php else:?>
 
             <?php if($data[0] === false):?>
                 <p> Une erreur vient de se produire</p>
@@ -40,7 +45,6 @@ include("../BlogEcrivain/View/Frontend/Menu.php");
                         <th > Date & heure </th>
                         <th> Titre  </th>
                         <th colspan="3"> ACTIONS </th>
-
                     </tr>
 
                     <?php foreach ($data[0] as $post):?>
@@ -53,19 +57,40 @@ include("../BlogEcrivain/View/Frontend/Menu.php");
                     </tr>
                     <?php endforeach; ?>
                 </table>
-
             <?php endif;?>
         <?php endif;?>
         <h4> <a href="index.php?action=formCreatePost" style="color: darkred"> Créer un nouvel article </a></h4>
+        </div>
+
     </div>
 
 
     <!-- ****************************************
                 2- Les Commentaires
        ******************************************-->
-    <div class="section_articles">
-        <h3>Liste des commentaires</h3>
+    <div class="section_articles" id="Commentaires">
+        <div class="titre_section_back">
+            <h3> Gestion des commentaires</h3>
+        </div>
 
+        <nav id="nav2">
+            <ul>
+                <li>
+                    <a href="index.php?action=ReadCat&Stat=signale#Commentaires"> <button> Signalés </button></a>
+                </li>
+
+                <li>
+                    <a href="index.php?action=ReadCat&Stat=modere#Commentaires"> <button> Modérés </button></a>
+                </li>
+
+                <li>
+                    <a href="index.php?action=ReadCat&Stat=neutre#Commentaires"> <button> Neutres </button> </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div class="corp_session_back">
         <?php if(empty($data[1])):?>
             <p> il n'y a aucun contact</p>
 
@@ -106,15 +131,20 @@ include("../BlogEcrivain/View/Frontend/Menu.php");
 
             <?php endif;?>
         <?php endif;?>
+
+        </div>
     </div>
 
 
     <!-- ****************************************
             3 - les utilisateurs
      ******************************************-->
-
     <div class="section_articles">
-        <h3>Liste utilisateurs</h3>
+        <div class="titre_section_back">
+            <h3> Gestion des utilisateurs </h3>
+        </div>
+
+        <div class="corp_session_back">
         <!-- Billets -->
         <?php if(empty($data[2])):?>
             <p> il n'y a aucun membre</p>
@@ -143,6 +173,6 @@ include("../BlogEcrivain/View/Frontend/Menu.php");
             <?php endif;?>
         <?php endif;?>
         <h4> <a href="index.php?action=form_createUserAdmin" style="color: darkred"> Créer un nouveau Compte </a></h4>
+        </div>
     </div>
-
 </div>

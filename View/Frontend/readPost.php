@@ -58,7 +58,7 @@ include("menu.php");
                         <!-- -->
                         <form  action="index.php?action=signaler" method="POST">
                             <input type="hidden" name="id" value="<?=$comment->getId()?>">
-                            <input type="hidden" name="stat_comment" value="SIGNALÉ" id="signalé_rouge"/>
+                            <input type="hidden" name="stat_comment" value="signale"/>
                             <input  id="button" type="submit" value="SIGNALER" />
                         </form>
 
@@ -94,7 +94,7 @@ include("menu.php");
                 <label for="text_comment">Commentaire:</label>
                 <textarea name="text_comment" form="form_createComment" cols="50" rows="10"></textarea>
 
-                <input type="hidden" name="stat_comment" value="NEUTRE"/>
+                <input type="hidden" name="stat_comment" value="neutre"/>
 
                 <br/> <br/>
 

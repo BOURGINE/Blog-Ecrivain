@@ -70,7 +70,6 @@ try {
 
         elseif ($_GET['action'] == 'accesAdmin')
         {
-
             if(isset($_SESSION['role']) && $_SESSION['role']=='1')
             {
                 $controller->readAllAdmin();
@@ -82,6 +81,18 @@ try {
             }
         }
 
+        elseif ($_GET['action'] == 'ReadCat')
+        {
+            if(isset($_SESSION['role']) && $_SESSION['role']=='1')
+            {
+                $controller->BackReadCat($_GET['Stat']);
+            }
+            else
+            {
+                header('Location: index.php');
+            }
+        }
+
 
         /**
          *
@@ -89,7 +100,6 @@ try {
          * ($userController)
          *
          **/
-
 
 
         elseif ($_GET['action'] == 'inscription')
@@ -135,9 +145,7 @@ try {
                 header('Location: index.php');
                 //  $controller->readLastPost();
             }
-
         }
-
 
         /**
          *

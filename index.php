@@ -158,7 +158,7 @@ try {
         }
 
 
-        elseif ($_GET['action'] == 'createPost') // si cette action correspond à creatContact
+        elseif ($_GET['action'] == 'createPost')
         {
             if (!empty($_POST['title']) && !empty($_POST['content']))
             {
@@ -213,12 +213,13 @@ try {
 
         elseif($_GET['action'] == 'createComment') //
         {
-            if (!empty($_POST['author']) && !isset($_POST['text_comment']) && !empty($_POST['id_post']))
+            if (!empty($_POST['author']) && !empty($_POST['text_comment']) && ($_POST['text_comment'])!==" ")
             {
                 $commentController->createComment($_POST);
             }
 
-            else {
+            else
+            {
                 // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
                 throw new Exception(' Vous devez entrez un pseudo et un commentaire.');
             }

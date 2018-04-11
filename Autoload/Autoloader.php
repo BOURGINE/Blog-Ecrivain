@@ -6,18 +6,23 @@ namespace Autoload;
  * @package App\Autoloading
  * Class Autoloader qui charge toute les class du projet
  */
-class Autoloader{
+class Autoloader
+{
     /**
      * Enregistre notre autoloader
      */
-    public static function register(){
+    public static function register()
+    {
         spl_autoload_register(array(__CLASS__, 'autoload'));
     }
+
+
     /**
      * Inclue le fichier correspondant à notre classe
      * @param $class string Le nom de la classe à charger
      */
-    public static function autoload($class){
+    public static function autoload($class)
+    {
         $class = str_replace(__NAMESPACE__.'\\','',$class );
         $class = str_replace('\\','/',$class );
         require '../'. $class .'.php';

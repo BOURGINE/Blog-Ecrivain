@@ -32,7 +32,6 @@ class CommentController extends PostController
 
         $saveIsOk = $commentManager->save($comment);
 
-
         if($saveIsOk){
             $message = 'Votre commentaire a été bien ajouté à la base de données';
 

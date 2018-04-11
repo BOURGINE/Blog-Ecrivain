@@ -85,16 +85,16 @@ include("menu.php");
                 <input type="hidden" name="author" id="pseudo" value="<?=$_SESSION['pseudo'] ?>"/>
 
                 <?php else:?>
-                <label for="pseudo"> Votre pseudo: </label>
-                <input type="text" name="author" id="pseudo"/>
+                <label for="author"> Votre pseudo: </label>
+                <input type="text" name="author" id="author"/>
                 <?php endif;?>
 
                 <br/> <br/>
 
-                <label for="pass"> Commentaire :</label>
-                <textarea name="text_comment" form="form_createComment" cols="50" rows="10"> </textarea>
+                <label for="text_comment">Commentaire:</label>
+                <textarea name="text_comment" form="form_createComment" cols="50" rows="10"></textarea>
 
-                <input type="hidden" name="stat_comment" value="AUTOMATIQUE"/>
+                <input type="hidden" name="stat_comment" value="NEUTRE"/>
 
                 <br/> <br/>
 

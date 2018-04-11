@@ -26,13 +26,13 @@ include("../BlogEcrivain/View/Frontend/menu.php");
         </p>
 
         <p>
-            <label for="content"> Image </label>
+            <label for="img"> Image </label>
             <input type="file" id="tel" name="img">
         </p>
 
         <p>
-            <label for="mel"> Contenu </label>
-            <textarea name="content" form="form_CreatePost" cols="100" rows="10" class="tinymce"> </textarea>
+            <label for="content">Contenu</label>
+            <textarea name="content" form="form_CreatePost" cols="100" rows="10" class="tinymce"></textarea>
         </p>
 
         <p>

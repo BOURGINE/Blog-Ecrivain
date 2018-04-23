@@ -21,4 +21,4 @@ if(isset($_SESSION['role']) && $_SESSION['role']=='1')
             <li><a href="index.php?action=chapitres&p=">Chapitres</a></li>
             <li>  <?= $info3 ?> </li>
         </ul>
-    </nav>
+</nav>

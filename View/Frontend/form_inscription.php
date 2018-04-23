@@ -31,7 +31,7 @@ include("menu.php");
         
         <input id="button" type="submit" value="Valider" style="text-align:center">
        
-</form>
+    </form>
 
 <?php $content = ob_get_clean(); ?>
 

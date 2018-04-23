@@ -33,12 +33,13 @@ class CommentController extends PostController
         $saveIsOk = $commentManager->save($comment);
 
         if($saveIsOk){
+
             $message = 'Votre commentaire a été bien ajouté à la base de données';
 
         } else{
             $message = 'votre commentaire na pas pu être ajouté à la base de données';
         }
-        //2- Redonne-moi la page readAll en mettant à jours les post et les commentaire
+        //2- Redonne-moi la page readpost en mettant à jours les post et les commentaire
         $this->readPost($newComment['id_post']);
     }
 

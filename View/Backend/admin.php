@@ -11,7 +11,7 @@ include("../BlogEcrivain/View/Frontend/logo.php");
                          MENU
      **************************************************-->
 <?php
-include("../BlogEcrivain/View/Frontend/Menu.php");
+include("../BlogEcrivain/View/Frontend/menu.php");
 ?>
 
 
@@ -120,7 +120,7 @@ include("../BlogEcrivain/View/Frontend/Menu.php");
                             <td id="moderé_vert">
                                 <form  action="index.php?action=moderer" method="POST">
                                 <input type="hidden" name="id" value="<?=$comment->getId()?>">
-                                <input type="hidden" name="stat_comment" value="MODERÉ"/>
+                                <input type="hidden" name="stat_comment" value="modere"/>
                                 <input  id="button" type="submit" value="MODERER" />
                                 </form>
                             </td>

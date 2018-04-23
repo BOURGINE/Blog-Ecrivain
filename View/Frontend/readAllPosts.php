@@ -95,7 +95,7 @@ include("menu.php");
                         <div class="billets">
 
                             <figure class="imgBillets">
-                                <img src="../BlogEcrivain/Public/imgUpload/<?= $post->getImg();?>"/>
+                                <img src="Public/imgUpload/<?= $post->getImg();?>"/>
                             </figure>
 
                             <!-- Corps billet -->
@@ -122,7 +122,7 @@ include("menu.php");
 
     <?php echo '<div id="pagination">'.$pagination.'</div>'?>
 
-</section> <!--FIn application-->
+</section> <!--OIn application-->
 
 
 <?php $content = ob_get_clean(); ?>

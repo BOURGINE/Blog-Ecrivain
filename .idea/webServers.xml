@@ -2,12 +2,12 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="f0e6651f-7992-49c6-b8b0-512de6a895aa" name="BlogEcrivain" url="http://projet4.recherchefinancement.org">
-        <fileTransfer host="projet4.recherchefinancement.org" port="21">
+      <webServer id="f0e6651f-7992-49c6-b8b0-512de6a895aa" name="BlogEcrivain" url="http://home734380760.1and1-data.host">
+        <fileTransfer host="home734380760.1and1-data.host" port="22" rootFolder="/BlogEcrivain" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
-          <option name="port" value="21" />
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
     </option>

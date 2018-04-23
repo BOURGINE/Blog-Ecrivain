@@ -28,12 +28,13 @@ include("menu.php");
             </div>
 
             <figure class="imgBillets">
-                <img src="../BlogEcrivain/Public/imgUpload/<?= $data[0]->getImg();?>"/>
+                <img src="Public/imgUpload/<?= $data[0]->getImg();?>" alt="jean forteroche"/>
             </figure>
 
             <p> <?= $data[0]->getContent();?> </p>
         </div>
 
+        <br/>
     <!-- Ici, je dois afficher les commentaires liés à chaque billet -->
 
         <div>
@@ -52,8 +53,7 @@ include("menu.php");
                         <h3> <?= $comment->getAuthor();?> </h3>
 
                         <h4> <?= $comment->getDate();?> </h4>
-                        <p> <?= $comment->getTextComment();?>
-                        </p>
+                        <p> <?= $comment->getTextComment();?></p>
 
                         <!-- -->
                         <form  action="index.php?action=signaler" method="POST">
@@ -69,6 +69,7 @@ include("menu.php");
                 <?php endif;?>
             <?php endif;?>
         </div>
+
 
         <!-- Ici, je dois afficher le formulaire de création de commentaire-->
 

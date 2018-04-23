@@ -19,6 +19,6 @@ class Connex_Db
      **/
     public function __construct()
     {
-        $this->pdo = new PDO('mysql:host=localhost; dbname=projet4', 'root','root');
+        $this->pdo = new PDO('mysql:host=XXXXXXXXXXXX;dbname=XXXXXXXXXXXX', 'XXXXXXXXX','XXXXXXXXXXX');
     }
 }

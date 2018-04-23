@@ -5,7 +5,6 @@ require"Autoload/Autoloader.php";
 use Autoload\Autoloader;
 Autoloader::register();
 
-
 use BlogEcrivain\View\View;
 
 use BlogEcrivain\Model\Entity\Post;
@@ -128,9 +127,16 @@ try {
         }
 
 
-        elseif ($_GET['action'] === 'deleteUser') // Si on appel la fonction get delete et qu'il y a un Id
+        elseif ($_GET['action'] === 'deleteUser') // Si on appel la fonction get delete
         {
-            $userController->deleteUser($_GET['id']); // Appelle la fonction delete en fonction de l'id reçu dans POST
+            if(isset($_SESSION['role']) && $_SESSION['role']=='1')
+            {
+                $userController->deleteUser($_GET['id']);
+            }
+            else // je raccompagne l'imposteur à la porte.
+            {
+                header('Location: index.php');
+            }
         }
 
 
@@ -156,7 +162,15 @@ try {
 
         elseif ($_GET['action'] == 'formCreatePost')
         {
-            $controller->formCreatePost();
+            if(isset($_SESSION['role']) && $_SESSION['role']=='1')
+            {
+                $controller->formCreatePost();
+            }
+            else
+            {
+                header('Location: index.php');
+                //  $controller->readLastPost();
+            }
         }
 
 
@@ -168,13 +182,13 @@ try {
 
         elseif ($_GET['action'] == 'createPost')
         {
-            if (!empty($_POST['title']) && !empty($_POST['content']))
+            if (isset($_SESSION['role']) && $_SESSION['role']=='1' && !empty($_POST['title']) && !empty($_POST['content']) && !empty($_FILES['img']['name']))
             {
                 $controller->createPost($_POST);
             }
             else {
                 // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
-                throw new Exception('Une erreurs est survenue. Vous devez remplir tous les champs');
+                throw new Exception('Une erreurs est survenue. Vous devez remplir tous les champs et choisir une image');
             }
         }
 
@@ -185,7 +199,7 @@ try {
 
         elseif($_GET['action'] == 'readPost')
         {
-            if(is_numeric($_GET['id']))
+            if(is_numeric($_GET['id']) && isset($_GET['id']))
             {
                $controller->readPost($_GET['id']);
             }
@@ -198,18 +212,44 @@ try {
 
         elseif($_GET['action'] === 'deletePost') // Si on appel la fonction get delete et qu'il y a un Id
         {
-            $controller->deletePost($_GET['id']); // Appelle la fonction delete en fonction de l'id reçu dans POST
+            if(isset($_SESSION['role']) && $_SESSION['role']=='1')
+            {
+                $controller->deletePost($_GET['id']);
+            }
+            else
+            {
+                header('Location: index.php');
+                //  $controller->readLastPost();
+            }
+
+
         }
 
         elseif($_GET['action'] == 'formUpdatePost') // Si on appel la fonction get delete et qu'il y a un Id
         {
-            $controller->formUpdatePost($_GET['id']); // envoi moi le formulaire de mise à jour.
+            if(isset($_SESSION['role']) && $_SESSION['role']=='1')
+            {
+                $controller->formUpdatePost($_GET['id']);
+            }
+            else
+            {
+                header('Location: index.php');
+                //  $controller->readLastPost();
+
+            }
         }
 
         elseif($_GET['action'] == 'updatePost') // Si on appel la fonction get delete et qu'il y a un Id
         {
-            $controller->updatePost(); // envoi la mise à jour de l'article à la base de donnée
 
+            if (isset($_SESSION['role']) && $_SESSION['role']=='1' && !empty($_POST['title']) && !empty($_POST['content']) && !empty($_FILES['img']['name']))
+            {
+                $controller->updatePost(); // envoi la mise à jour de l'article à la base de donnée
+            }
+            else {
+                // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
+                throw new Exception('Une erreurs est survenue. Vous devez remplir tous les champs et choisir une image');
+            }
         }
 
         /**
@@ -235,7 +275,15 @@ try {
 
         elseif ($_GET['action'] == 'deleteComment')
         {
-            $commentController->deleteComment($_GET['id']);
+            if (isset($_SESSION['role']) && $_SESSION['role']=='1')
+            {
+                $commentController->deleteComment($_GET['id']);
+            }
+            else {
+                // Erreur ! On arrête tout, on envoie une exception, donc au saute directement au catch
+                throw new Exception('Vous ne disposez pas de droit de suppression de commentaire');
+            }
+
         }
 
         elseif ($_GET['action'] == 'signaler' Or 'moderer')
@@ -279,4 +327,5 @@ $view->showPage("article", $data);
 // vue est en faite le résultat de mon readAll
 
 **/
-?>
+
+

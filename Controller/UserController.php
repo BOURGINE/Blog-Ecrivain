@@ -64,7 +64,8 @@ class UserController extends PostController
         elseif(isset($_SESSION['role']) && $_SESSION['role']=='1')
         {
             $this->readAllAdmin();
-        }else {
+        }else
+            {
             $this->formConnexion();
             echo "<script>alert(\"Identifiant ou Mot de passe incorrect\")</script>";
         }
